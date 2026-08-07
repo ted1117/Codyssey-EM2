@@ -1,13 +1,15 @@
 from quiz import Quiz
+from record import Record
 from state_repository import StateRepository
 
 
 class QuizGame:
     def __init__(self, repository: StateRepository):
         self._repository = repository
-        self._quizzes, self._best_score = self._repository.load()
+        self._quizzes, self._best_record = self._repository.load()
 
     def run(self):
+        """게임을 실행하는 메인 루프"""
         actions = {
             1: self.play_quiz,
             2: self.add_quiz,
@@ -27,6 +29,7 @@ class QuizGame:
 
     @staticmethod
     def show_menu():
+        """게임 메뉴를 출력한다."""
         menu: str = """
                     ========================================
                     🎯 나만의 퀴즈 게임 🎯
@@ -50,7 +53,30 @@ class QuizGame:
         pass
 
     def show_best_score(self):
-        print(f"최고 점수: {self._best_score}점")
+        """최고 기록과 점수를 출력한다."""
+        if self._best_record:
+            print(
+                f"최고 점수: {self._best_record.score:.2f}점 ({self._best_record.total}문제 중 {self._best_record.correct}문제 정답)"
+            )
+            return
+        print("아직 최고 점수가 없습니다. 퀴즈를 풀어보세요!")
+        return
+
+    def update_best_record(self, current_record: Record) -> bool:
+        """
+        최고 기록을 경신한다.
+
+        Args:
+            current_record (Record): 현재 기록
+
+        Returns:
+            bool: 최고 기록을 경신했는지 여부
+        """
+        if self._best_record is None or current_record.score > self._best_record.score:
+            self._best_record = current_record
+            self._repository.save(self._quizzes, self._best_record)
+            return True
+        return False
 
     def get_number_input(self, prompt: str, min_value: int, max_value: int) -> int:
         while True:
