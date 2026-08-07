@@ -1,0 +1,10 @@
+{
+    "quizzes": [
+        {
+            "question": "Python 창시자는?",
+            "choices": ["Guido", "Linus", "Bjarne", "James"],
+            "answer": 1
+        }
+    ],
+    "best_score": 3
+}
