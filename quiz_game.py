@@ -93,7 +93,7 @@ class QuizGame:
 
             if number not in range(min_value, max_value + 1):
                 print(
-                    f"입력이 범위를 벗어났습니다. {min_value}에서 {max_value} 사이의 숫자를 입력해주세요."
+                    f"잘못된 입력입니다. {min_value}~{max_value} 사이의 숫자를 입력하세요."
                 )
                 continue
 
