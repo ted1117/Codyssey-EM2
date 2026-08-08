@@ -88,7 +88,9 @@ class QuizGame:
             try:
                 number = int(number)
             except ValueError:
-                print("유효한 숫자가 아닙니다. 다시 입력해주세요.")
+                print(
+                    f"잘못된 입력입니다. {min_value}~{max_value} 사이의 숫자를 입력하세요."
+                )
                 continue
 
             if number not in range(min_value, max_value + 1):
