@@ -179,7 +179,15 @@ class QuizGame:
             return number
 
     def get_text_input(self, prompt: str) -> str:
-        pass
+        """사용자에게 텍스트를 입력받는다."""
+        while True:
+            text = input(prompt).strip()
+
+            if not text:
+                print("입력이 비어 있습니다. 다시 입력해주세요.")
+                continue
+
+            return text
 
     def exit_game(self):
         pass
