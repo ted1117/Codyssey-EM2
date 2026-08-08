@@ -189,5 +189,11 @@ class QuizGame:
 
             return text
 
-    def exit_game(self):
-        pass
+    def exit_game(self) -> None:
+        """현재 상태를 저장하고 게임을 종료한다."""
+        if self._repository.save(self._quizzes, self._best_record):
+            print("데이터를 저장했습니다.")
+        else:
+            print("데이터 저장에 실패했습니다.")
+
+        print("퀴즈 게임을 종료합니다.")
