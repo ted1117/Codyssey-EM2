@@ -115,8 +115,19 @@ class QuizGame:
             self._quizzes.pop()
             print("\n퀴즈 저장에 실패했습니다.")
 
-    def list_quizzes(self):
-        pass
+    def list_quizzes(self) -> None:
+        """등록된 퀴즈 목록을 출력한다."""
+        if not self._quizzes:
+            print("등록된 퀴즈가 없습니다.")
+            return
+
+        print(f"\n등록된 퀴즈 목록 (총 {len(self._quizzes)}개)\n")
+        print("-" * 40)
+
+        for index, quiz in enumerate(self._quizzes, start=1):
+            print(f"[{index}] {quiz.question}")
+
+        print("-" * 40)
 
     def show_best_score(self):
         """최고 기록과 점수를 출력한다."""
