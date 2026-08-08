@@ -87,8 +87,33 @@ class QuizGame:
 
         print("=" * 40)
 
-    def add_quiz(self):
-        pass
+    def add_quiz(self) -> None:
+        """새로운 퀴즈를 추가한다."""
+        print("\n새로운 퀴즈를 추가합니다.\n")
+
+        question = self.get_text_input("문제를 입력하세요: ")
+
+        choices = [self.get_text_input(f"선택지 {i}: ") for i in range(1, 5)]
+
+        answer = self.get_number_input(
+            "정답 번호 (1-4): ",
+            1,
+            4,
+        )
+
+        quiz = Quiz(
+            question=question,
+            choices=choices,
+            answer=answer,
+        )
+
+        self._quizzes.append(quiz)
+
+        if self._repository.save(self._quizzes, self._best_record):
+            print("\n퀴즈가 추가되었습니다!")
+        else:
+            self._quizzes.pop()
+            print("\n퀴즈 저장에 실패했습니다.")
 
     def list_quizzes(self):
         pass
