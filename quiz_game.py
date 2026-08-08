@@ -18,14 +18,21 @@ class QuizGame:
             5: self.exit_game,
         }
 
-        while True:
-            self.show_menu()
-            choice = self.get_number_input("메뉴를 선택하세요: ", 1, 5)
-            action = actions.get(choice)
-            if action:
-                action()
-            else:
-                print("잘못된 선택입니다. 다시 시도해주세요.")
+        try:
+            while True:
+                self.show_menu()
+                choice = self.get_number_input("메뉴를 선택하세요: ", 1, 5)
+                action = actions.get(choice)
+                if action:
+                    action()
+                else:
+                    print("잘못된 선택입니다. 다시 시도해주세요.")
+        except KeyboardInterrupt:
+            print("\n게임을 종료합니다.")
+            self.exit_game()
+        except EOFError:
+            print("\n입력이 종료되었습니다. 게임을 종료합니다.")
+            self.exit_game()
 
     @staticmethod
     def show_menu():
