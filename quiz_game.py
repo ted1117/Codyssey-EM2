@@ -44,7 +44,48 @@ class QuizGame:
         print(menu)
 
     def play_quiz(self):
-        pass
+        """퀴즈를 진행한다."""
+        # 퀴즈가 없으면 안내 메시지를 출력하고 종료
+        if not self._quizzes:
+            print("퀴즈가 없습니다. 먼저 퀴즈를 추가해주세요.")
+            return
+
+        total_questions = len(self._quizzes)
+        correct_answers = 0
+
+        for index, quiz in enumerate(self._quizzes, start=1):
+            print("-" * 40)
+            print(f"[문제 {index}]")
+            print(quiz.question)
+            print()
+            for number, choice in enumerate(quiz.choices, start=1):
+                print(f"{number}. {choice}")
+
+            print()
+
+            user_answer = self.get_number_input("정답 입력: ", 1, len(quiz.choices))
+
+            if quiz.is_correct(user_answer):
+                print("정답입니다!")
+                correct_answers += 1
+            else:
+                print(
+                    f"틀렸습니다. 정답은 {quiz.answer}번: '{quiz.choices[quiz.answer - 1]}'입니다."
+                )
+
+        current_record = Record(total=total_questions, correct=correct_answers)
+        print("=" * 40)
+        print(
+            f"결과: {current_record.total}문제 중 "
+            f"{current_record.correct}문제 정답! "
+            f"({current_record.score:.2f}점)"
+        )
+
+        if self.update_best_record(current_record):
+
+            print("새로운 최고 점수입니다!")
+
+        print("=" * 40)
 
     def add_quiz(self):
         pass
