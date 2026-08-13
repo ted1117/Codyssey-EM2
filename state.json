@@ -1,68 +1,55 @@
 {
     "quizzes": [
         {
-            "question": "대한민국의 수도는 어디인가요?",
+            "question": "다음 중 파이썬의 데이터 타입이 아닌 것은?",
             "choices": [
-                "서울",
-                "부산",
-                "대전",
-                "인천"
+                "list",
+                "tuple",
+                "dictionary",
+                "array"
+            ],
+            "answer": 4
+        },
+        {
+            "question": "다음 중 파이썬에서 반복문을 종료하는 키워드는?",
+            "choices": [
+                "break",
+                "continue",
+                "pass",
+                "exit"
             ],
             "answer": 1
         },
         {
-            "question": "Python에서 리스트의 길이를 구하는 함수는?",
+            "question": "다음 중 파이썬에서 함수를 정의하는 키워드는?",
             "choices": [
-                "size()",
-                "length()",
-                "len()",
-                "count()"
+                "def",
+                "function",
+                "lambda",
+                "define"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "다음 중 파이썬에서 예외 처리를 위해 사용하는 키워드는?",
+            "choices": [
+                "try",
+                "catch",
+                "except",
+                "finally"
             ],
             "answer": 3
         },
         {
-            "question": "태양계에서 가장 큰 행성은?",
+            "question": "다음 중 파이썬에서 리스트에 요소를 추가하는 메서드는?",
             "choices": [
-                "지구",
-                "화성",
-                "목성",
-                "토성"
+                "append",
+                "add",
+                "insert_item",
+                "push"
             ],
-            "answer": 3
-        },
-        {
-            "question": "영화 '기생충'의 감독은?",
-            "choices": [
-                "박찬욱",
-                "봉준호",
-                "김기덕",
-                "이창동"
-            ],
-            "answer": 2
-        },
-        {
-            "question": "1바이트(Byte)는 몇 비트(Bit)인가요?",
-            "choices": [
-                "4비트",
-                "8비트",
-                "16비트",
-                "32비트"
-            ],
-            "answer": 2
-        },
-        {
-            "question": "이노베이션 아카데미가 위치한 행은?",
-            "choices": [
-                "대치동",
-                "구로동",
-                "개포동",
-                "중동"
-            ],
-            "answer": 3
+            "answer": 1
         }
     ],
-    "best_record": {
-        "total": 5,
-        "correct": 5
-    }
+    "best_record": null
 }
