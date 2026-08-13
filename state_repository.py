@@ -33,7 +33,8 @@ class StateRepository:
                 Quiz.from_dict(quiz_dict) for quiz_dict in state.get("quizzes", [])
             ]
 
-            record_data: dict = state.get("best_record")
+            # record_data: dict = state.get("best_record")
+            record_data: dict = state["best_record"]
             best_record: Record | None = Record(**record_data) if record_data else None
 
             return quizzes, best_record
