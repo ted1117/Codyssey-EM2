@@ -23,6 +23,11 @@ class QuizGame:
                 self.show_menu()
                 choice = self.get_number_input("메뉴를 선택하세요: ", 1, 5)
                 action = actions.get(choice)
+
+                if choice == 5:
+                    self.exit_game()
+                    break
+
                 if action:
                     action()
                 else:
