@@ -85,8 +85,8 @@ class StateRepository:
         """
         default_quizzes = [
             Quiz(
-                question="다음 중 파이썬의 데이터 타입이 아닌 것은?",
-                choices=["list", "tuple", "dictionary", "array"],
+                question="다음 중 파이썬의 기본 내장 자료형이 아닌 것은?",
+                choices=["list", "tuple", "dict", "array"],
                 answer=4,
             ),
             Quiz(
