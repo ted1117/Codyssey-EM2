@@ -1,10 +1,68 @@
 {
     "quizzes": [
         {
-            "question": "Python 창시자는?",
-            "choices": ["Guido", "Linus", "Bjarne", "James"],
+            "question": "대한민국의 수도는 어디인가요?",
+            "choices": [
+                "서울",
+                "부산",
+                "대전",
+                "인천"
+            ],
             "answer": 1
+        },
+        {
+            "question": "Python에서 리스트의 길이를 구하는 함수는?",
+            "choices": [
+                "size()",
+                "length()",
+                "len()",
+                "count()"
+            ],
+            "answer": 3
+        },
+        {
+            "question": "태양계에서 가장 큰 행성은?",
+            "choices": [
+                "지구",
+                "화성",
+                "목성",
+                "토성"
+            ],
+            "answer": 3
+        },
+        {
+            "question": "영화 '기생충'의 감독은?",
+            "choices": [
+                "박찬욱",
+                "봉준호",
+                "김기덕",
+                "이창동"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "1바이트(Byte)는 몇 비트(Bit)인가요?",
+            "choices": [
+                "4비트",
+                "8비트",
+                "16비트",
+                "32비트"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "이노베이션 아카데미가 위치한 행은?",
+            "choices": [
+                "대치동",
+                "구로동",
+                "개포동",
+                "중동"
+            ],
+            "answer": 3
         }
     ],
-    "best_record": null
+    "best_record": {
+        "total": 5,
+        "correct": 5
+    }
 }
