@@ -30,6 +30,7 @@ class QuizGame:
 
                 if action:
                     action()
+                    self.wait_for_main_menu()
                 else:
                     print("잘못된 선택입니다. 다시 시도해주세요.")
         except KeyboardInterrupt:
@@ -207,6 +208,11 @@ class QuizGame:
                 continue
 
             return text
+
+    @staticmethod
+    def wait_for_main_menu() -> None:
+        """사용자가 결과를 확인한 뒤 메인 메뉴로 돌아가도록 대기한다."""
+        input("\n메인 메뉴로 돌아가려면 Enter 키를 누르세요.")
 
     def exit_game(self) -> None:
         """현재 상태를 저장하고 게임을 종료한다."""
