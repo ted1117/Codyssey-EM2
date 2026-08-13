@@ -161,7 +161,14 @@ class QuizGame:
         Returns:
             bool: 최고 기록을 경신했는지 여부
         """
-        if self._best_record is None or current_record.score > self._best_record.score:
+        if (
+            self._best_record is None
+            or current_record.score > self._best_record.score
+            or (
+                current_record.score == self._best_record.score
+                and current_record.total >= self._best_record.total
+            )
+        ):
             self._best_record = current_record
             self._repository.save(self._quizzes, self._best_record)
             return True
