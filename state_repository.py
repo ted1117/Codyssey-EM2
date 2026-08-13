@@ -96,5 +96,10 @@ class StateRepository:
                 choices=["try", "catch", "except", "finally"],
                 answer=3,
             ),
+            Quiz(
+                question="다음 중 파이썬에서 리스트에 요소를 추가하는 메서드는?",
+                choices=["append", "add", "insert_item", "push"],
+                answer=1,
+            ),
         ]
         return default_quizzes
