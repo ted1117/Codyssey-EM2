@@ -37,7 +37,14 @@ class StateRepository:
             best_record: Record | None = Record(**record_data) if record_data else None
 
             return quizzes, best_record
-        except (OSError, json.JSONDecodeError, KeyError, TypeError, ValueError) as e:
+        except (
+            OSError,
+            AttributeError,
+            json.JSONDecodeError,
+            KeyError,
+            TypeError,
+            ValueError,
+        ) as e:
             print(f"저장 파일을 불러올 수 없습니다.: {e}")
             print("기본 데이터로 복구합니다.")
 
