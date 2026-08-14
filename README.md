@@ -81,45 +81,6 @@ python3 main.py
 
 ![최고 점수 확인 화면](assets/best-score.png)
 
-### Git 커밋 그래프
-
-![Git 커밋 그래프](assets/git-log-graph.png)
-
-Git 커밋 그래프는 다음 명령의 실행 결과가 모두 보이도록 촬영합니다.
-
-```zsh
-git log --oneline --graph
-```
-
-### history
-
-![git-checkout-merge](assets/git-checkout-merge.png)
-
-![git-clone](assets/git-clone.png)
-
-![git-pull](assets/git-pull.png)
-
-```zsh
-# 새로운 브랜치 생성 후 이동
-git checkout -b (새로운 브랜치)
-
-# 파일 스테이징
-git add (대상 파일)
-
-# 커밋 메시지 작성 후 커밋
-git commit -m "(커밋 메시지)"
-
-# 원격 저장소 푸시
-git push
-
-# 머지
-git merge (대상 브랜치)
-
-# pull
-git pull
-```
-
-
 ## 파일 구조
 
 ```text
@@ -179,3 +140,53 @@ Codyssey-EM2/
 - 파일 없음: 프로그램에 포함된 기본 퀴즈 사용
 - 파일 읽기 실패: 오류 안내 후 기본 데이터로 복구
 - JSON 손상: 오류 안내 후 기본 데이터로 복구
+
+## Git
+
+### 브랜치
+```text
+main
+ └── develop
+      ├── feature/quiz
+      ├── feature/quizgame
+      ├── feature/best-record
+      └── feature/load-json
+```
+
+### Git 커밋 그래프
+
+![Git 커밋 그래프](assets/git-log-graph.png)
+
+Git 커밋 그래프는 다음 명령의 실행 결과가 모두 보이도록 촬영합니다.
+
+```zsh
+git log --oneline --graph
+```
+
+### history
+
+![git-checkout-merge](assets/git-checkout-merge.png)
+
+![git-clone](assets/git-clone.png)
+
+![git-pull](assets/git-pull.png)
+
+```zsh
+# 새로운 브랜치 생성 후 이동
+git checkout -b (새로운 브랜치)
+
+# 파일 스테이징
+git add (대상 파일)
+
+# 커밋 메시지 작성 후 커밋
+git commit -m "(커밋 메시지)"
+
+# 원격 저장소 푸시
+git push
+
+# 머지
+git merge (대상 브랜치)
+
+# pull
+git pull
+```
