@@ -30,7 +30,7 @@ python3 --version
 
 저장소를 내려받은 뒤 프로젝트 루트에서 다음 명령을 실행합니다.
 
-```bash
+```zsh
 python3 main.py
 ```
 
@@ -87,9 +87,31 @@ python3 main.py
 
 Git 커밋 그래프는 다음 명령의 실행 결과가 모두 보이도록 촬영합니다.
 
-```bash
+```zsh
 git log --oneline --graph
 ```
+
+### history
+
+![git-checkout-merge](assets/git-checkout-merge.png)
+
+```zsh
+# 새로운 브랜치 생성 후 이동
+git checkout -b (새로운 브랜치)
+
+# 파일 스테이징
+git add (대상 파일)
+
+# 커밋 메시지 작성 후 커밋
+git commit -m "(커밋 메시지)"
+
+# 원격 저장소 푸시
+git push
+
+# 머지
+git merge (대상 브랜치)
+```
+
 
 ## 파일 구조
 
