@@ -95,6 +95,10 @@ git log --oneline --graph
 
 ![git-checkout-merge](assets/git-checkout-merge.png)
 
+![git-clone](assets/git-clone.png)
+
+![git-pull](assets/git-pull.png)
+
 ```zsh
 # 새로운 브랜치 생성 후 이동
 git checkout -b (새로운 브랜치)
@@ -110,6 +114,9 @@ git push
 
 # 머지
 git merge (대상 브랜치)
+
+# pull
+git pull
 ```
 
 
