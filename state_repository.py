@@ -2,7 +2,7 @@ import json
 from dataclasses import asdict
 from pathlib import Path
 
-from quiz import Quiz
+from quiz import Quiz, create_default_quizzes
 from record import Record
 
 
@@ -24,7 +24,7 @@ class StateRepository:
             tuple[list[Quiz], Record | None]: (퀴즈 목록, 최고 기록)
         """
         if not self._file_path.exists():
-            return self._create_default_quizzes(), None
+            return create_default_quizzes(), None
         try:
             with self._file_path.open("r", encoding="utf-8") as f:
                 state = json.load(f)
@@ -49,7 +49,7 @@ class StateRepository:
             print(f"저장 파일을 불러올 수 없습니다.: {e}")
             print("기본 데이터로 복구합니다.")
 
-            return self._create_default_quizzes(), None
+            return create_default_quizzes(), None
 
     def save(self, quizzes: list[Quiz], best_record: Record | None) -> bool:
         """
@@ -75,39 +75,3 @@ class StateRepository:
         except OSError as e:
             print(f"저장 파일을 저장할 수 없습니다.: {e}")
             return False
-
-    def _create_default_quizzes(self) -> list[Quiz]:
-        """
-        기본 퀴즈 목록을 생성한다.
-
-        Returns:
-            list[Quiz]: 기본 퀴즈 목록
-        """
-        default_quizzes = [
-            Quiz(
-                question="다음 중 파이썬의 기본 내장 자료형이 아닌 것은?",
-                choices=["list", "tuple", "dict", "array"],
-                answer=4,
-            ),
-            Quiz(
-                question="다음 중 파이썬에서 반복문을 종료하는 키워드는?",
-                choices=["break", "continue", "pass", "exit"],
-                answer=1,
-            ),
-            Quiz(
-                question="다음 중 파이썬에서 함수를 정의하는 키워드는?",
-                choices=["def", "function", "lambda", "define"],
-                answer=1,
-            ),
-            Quiz(
-                question="다음 중 파이썬에서 예외 처리를 위해 사용하는 키워드는?",
-                choices=["try", "catch", "except", "finally"],
-                answer=3,
-            ),
-            Quiz(
-                question="다음 중 파이썬에서 리스트에 요소를 추가하는 메서드는?",
-                choices=["append", "add", "insert_item", "push"],
-                answer=1,
-            ),
-        ]
-        return default_quizzes

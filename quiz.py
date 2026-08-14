@@ -58,3 +58,34 @@ class Quiz:
             choices=data["choices"],
             answer=data["answer"],
         )
+
+
+def create_default_quizzes() -> list[Quiz]:
+    """프로그램에서 사용할 기본 퀴즈 목록을 생성한다."""
+    return [
+        Quiz(
+            question="파이썬에서 화면에 값을 출력할 때 사용하는 함수는?",
+            choices=["input()", "print()", "output()", "display()"],
+            answer=2,
+        ),
+        Quiz(
+            question="파이썬에서 리스트의 첫 번째 요소에 접근할 때 사용하는 인덱스는?",
+            choices=["0", "1", "-1", "first"],
+            answer=1,
+        ),
+        Quiz(
+            question="조건에 따라 다른 코드를 실행할 때 사용하는 파이썬 키워드는?",
+            choices=["for", "if", "when", "switch"],
+            answer=2,
+        ),
+        Quiz(
+            question="파이썬에서 몫을 구하는 연산자는?",
+            choices=["/", "%", "//", "**"],
+            answer=3,
+        ),
+        Quiz(
+            question="파이썬에서 값이 없음을 나타내는 특수한 값은?",
+            choices=["Empty", "Null", "None", "Nothing"],
+            answer=3,
+        ),
+    ]
