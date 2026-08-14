@@ -143,6 +143,8 @@ Codyssey-EM2/
 
 ## Git
 
+https://github.com/ted1117/Codyssey-EM2
+
 ### 브랜치
 ```text
 main
